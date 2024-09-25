@@ -1,0 +1,57 @@
+------------------------------------------------Contributions Summary----------------------------------------------------------------------------------------------------------------------
+
+
+Harman Kumar (2023227):
+
+Implemented the main function, managing the shell's execution flow and user interactions.
+Developed the executeCommand and executecommands functions to handle command execution, including input/output redirection and piping.
+Designed the HistoryEntry structure to track command history, including process ID and execution timestamps.
+
+Alabhya Jha (2023069):
+
+Created the cleanup, parse, makecmd, my_handler, display_history, and add_to_history functions for command processing and memory management.
+Enhanced user experience by managing command history and displaying execution details upon user request.
+Implemented signal handling to allow termination and display of command history on interrupt.
+
+
+
+------------------------------------------------Limitations of SimpleShell----------------------------------------------------------------------------------------------------------------
+
+Limitation: SimpleShell does not support built-in commands like cd, exit, export, etc.
+Reason: The shell focuses primarily on executing external commands. Built-in commands require changes to the shell's environment (e.g., changing the current working directory), which this implementation does not handle.
+
+
+Limited Command Parsing:
+
+Limitation: SimpleShell can only parse commands separated by pipes (|) and does not support complex command structures (e.g., logical operators like &&, ||).
+Reason: The parsing logic is designed to handle simple commands and piping; extending this to include logical operators would require significant redesign and additional handling logic.
+
+
+No Input Redirection from Files:
+
+Limitation: SimpleShell does not support input redirection using < from files.
+Reason: While output redirection to files is a common feature, the current design focuses on command execution and does not include input handling from files, simplifying implementation.
+
+
+Limited Background Process Management:
+
+Limitation: Users cannot manage background processes effectively (e.g., bring a background process to the foreground or list running background processes).
+Reason: The shell provides basic support for background execution using &, but it lacks a process table or tracking mechanism for ongoing background jobs.
+
+
+No Command Completion or Editing:
+
+Limitation: SimpleShell does not support command line editing features (like arrow keys for navigation) or command completion.
+Reason: This implementation focuses on simplicity and does not include libraries or interfaces that handle more complex user input scenarios.
+
+
+Error Handling:
+
+Limitation: Error reporting is minimal and does not differentiate between types of errors (e.g., command not found vs. permission denied).
+Reason: The current design prioritizes straightforward execution and feedback, lacking a robust error handling framework that categorizes and presents errors to the user.
+
+
+Resource Limitations:
+
+Limitation: The shell has a fixed maximum command history size (100 entries) and a maximum input length (2048 characters).
+Reason: These limitations are in place to manage memory usage and performance, but they restrict the shell's scalability and user experience.
