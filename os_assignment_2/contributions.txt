@@ -17,7 +17,7 @@ Implemented signal handling to allow termination and display of command history 
 
 ------------------------------------------------Limitations of SimpleShell----------------------------------------------------------------------------------------------------------------
 
-Limitation: SimpleShell does not support built-in commands like cd, exit, export, etc.
+Limitation: SimpleShell does not support built-in commands like cd,  export, etc.
 Reason: The shell focuses primarily on executing external commands. Built-in commands require changes to the shell's environment (e.g., changing the current working directory), which this implementation does not handle.
 
 
